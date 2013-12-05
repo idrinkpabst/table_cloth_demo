@@ -1,0 +1,7 @@
+.container
+  .row
+    .span12
+      h1 Listing Oligarchs
+      br
+      = raw simple_table_for @oligarchs, with: OligarchTable
+      = link_to 'New Oligarch', new_oligarch_path

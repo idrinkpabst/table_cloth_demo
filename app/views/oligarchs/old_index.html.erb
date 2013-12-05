@@ -1,0 +1,35 @@
+<h1>Listing oligarchs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Rank</th>
+      <th>Age</th>
+      <th>Net worth</th>
+      <th>Properties</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @oligarchs.each do |oligarch| %>
+      <tr>
+        <td><%= oligarch.name %></td>
+        <td><%= oligarch.rank %></td>
+        <td><%= oligarch.age %></td>
+        <td><%= oligarch.net_worth %></td>
+        <td><%= oligarch.properties %></td>
+        <td><%= link_to 'Show', oligarch %></td>
+        <td><%= link_to 'Edit', edit_oligarch_path(oligarch) %></td>
+        <td><%= link_to 'Destroy', oligarch, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Oligarch', new_oligarch_path %>

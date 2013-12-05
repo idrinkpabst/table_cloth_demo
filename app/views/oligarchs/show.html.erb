@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @oligarch.name %>
+</p>
+
+<p>
+  <strong>Rank:</strong>
+  <%= @oligarch.rank %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @oligarch.age %>
+</p>
+
+<p>
+  <strong>Net worth:</strong>
+  <%= @oligarch.net_worth %>
+</p>
+
+<p>
+  <strong>Properties:</strong>
+  <%= @oligarch.properties %>
+</p>
+
+<%= link_to 'Edit', edit_oligarch_path(@oligarch) %> |
+<%= link_to 'Back', oligarchs_path %>
