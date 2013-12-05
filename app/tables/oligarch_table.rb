@@ -21,6 +21,16 @@ class OligarchTable < TableCloth::Base
     end
   end
 
+  if false
+    column :show, if: false do |oligarch|
+      link_to 'Show', oligarch_path(oligarch)
+    end
+
+    column :edit do |oligarch|
+      link_to 'Edit', edit_oligarch_path(oligarch)
+    end
+  end
+
   # To include actions on this table, uncomment this line
   # include TableCloth::Extensions::Actions
 

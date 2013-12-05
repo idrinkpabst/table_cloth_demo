@@ -1,4 +1,5 @@
 TableClothDemo::Application.routes.draw do
+  devise_for :users
   resources :oligarchs do
     collection do
       get 'old_index'
