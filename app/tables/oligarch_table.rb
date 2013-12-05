@@ -21,14 +21,18 @@ class OligarchTable < TableCloth::Base
     end
   end
 
-  if false
-    column :show, if: false do |oligarch|
-      link_to 'Show', oligarch_path(oligarch)
-    end
 
-    column :edit do |oligarch|
-      link_to 'Edit', edit_oligarch_path(oligarch)
-    end
+  column :show, if: :admin? do |oligarch|
+    link_to 'Show', oligarch_path(oligarch)
+  end
+
+  column :edit, if: :admin? do |oligarch|
+    link_to 'Edit', edit_oligarch_path(oligarch)
+  end
+
+
+  def admin?
+    view.current_user && view.current_user.admin
   end
 
   # To include actions on this table, uncomment this line
